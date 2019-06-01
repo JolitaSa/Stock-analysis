@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.js.project.app;
+package com.js.project.model;
 
 /**
  *
  * @author Jolita
  */
-public enum EnmIncrDecr {
-    GREEN, RED, GREY;
+public interface StockI {
+
+public void getSomeNews();
+public void getData();
+       
+    
 }
