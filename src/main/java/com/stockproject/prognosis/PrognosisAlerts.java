@@ -8,7 +8,6 @@ package com.stockproject.prognosis;
 import com.stockproject.model.FastOcsCalcResult;
 import com.stockproject.model.SlowOcsCalcResult;
 
-
 /**
  *
  * @author Jolita
@@ -18,22 +17,20 @@ public class PrognosisAlerts {
     private int periodLow = 20;
     private int periodHigh = 80;
 
-    public void prognosisAlert(FastOcsCalcResult fastOcs, SlowOcsCalcResult slowOcs) {
+    public AlertsEnm prognosisAlert(FastOcsCalcResult fastOcs, SlowOcsCalcResult slowOcs) {
 
         if ((slowOcs.getResultD1() == (fastOcs.getLastDayK())) && (fastOcs.getOneDayBeforeK() < slowOcs.getResultD2()
                 && (fastOcs.getTwoDaysBeforeK() < slowOcs.getResultD3()) && (slowOcs.getResultD1() < periodLow) && (fastOcs.getLastDayK() < periodLow))) {
-            System.out.println("BUY recommendation");
+            return AlertsEnm.BUY;
         } else if ((slowOcs.getResultD1() < periodLow) && (fastOcs.getLastDayK() < periodLow)) {
-            System.out.println("The stock has reached LOW period");
+            return AlertsEnm.LOW_PERIOD;
         } else if ((slowOcs.getResultD1() == (fastOcs.getLastDayK())) && (fastOcs.getOneDayBeforeK() > slowOcs.getResultD2())
                 && (fastOcs.getTwoDaysBeforeK() > slowOcs.getResultD3()) && (slowOcs.getResultD1() > periodHigh) && (fastOcs.getLastDayK() > periodHigh)) {
-            System.out.println("SELL recommendation");
+            return AlertsEnm.SELL;
         } else if ((slowOcs.getResultD1() > periodHigh) && (fastOcs.getLastDayK() > periodHigh)) {
-            System.out.println("The stock has reached HIGH period");
+            return AlertsEnm.HIGH_PERIOD;
         } else {
-            System.out.println("Today no signals");
+            return AlertsEnm.NO_SIGNAL;
         }
-
     }
-
 }

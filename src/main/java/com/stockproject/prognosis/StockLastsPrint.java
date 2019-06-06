@@ -5,10 +5,7 @@
  */
 package com.stockproject.prognosis;
 
-import com.stockproject.data.DataLoader;
-import com.stockproject.data.TempDataLoader;
 import com.stockproject.model.Stock;
-import com.stockproject.model.StockOfDay;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,16 +15,15 @@ import java.util.List;
  */
 public class StockLastsPrint {
 
-    public void loadPricesL() {
+    public void printPricesL(Stock stock) {
 
-        DataLoader load = new TempDataLoader();
-        System.out.println(load.loadData().getName());
-        
         List<Double> lastP = new ArrayList<>();
-        int size = load.loadData().getData().size();
+        int size = stock.getData().size();
         for (int i = 0; i < size; i++) {
-            lastP.add(load.loadData().getData().get(i).getpLast());
+            lastP.add(stock.getData().get(i).getpLast());
             System.out.println(lastP.get(i));
         }
+
+        
     }
 }

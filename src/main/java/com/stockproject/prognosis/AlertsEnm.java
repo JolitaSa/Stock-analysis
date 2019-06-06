@@ -3,18 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.stockproject.test;
+package com.stockproject.prognosis;
 
 /**
  *
  * @author Jolita
  */
-
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
-public class PrognosisTest {
+public enum AlertsEnm {
     
-    
+    BUY, SELL, LOW_PERIOD, HIGH_PERIOD, NO_SIGNAL
 }

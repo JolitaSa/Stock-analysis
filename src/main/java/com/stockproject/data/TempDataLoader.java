@@ -16,31 +16,31 @@ import java.util.List;
  *
  * @author Jolita
  */
-public class TempDataLoader implements DataLoader {
+public class TempDataLoader implements DataLoaderI {
 
     @Override
     public Stock loadData() {
         List<StockOfDay> data = new ArrayList<>();
-        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 13), 0.473, 0.469, 0.473));
-        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 14), 0.469, 0.460, 0.469));
-        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 15), 0.460, 0.463, 0.466));
-        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 16), 0.464, 0.463, 0.465));
-        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 17), 0.464, 0.462, 0.466));
-        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 20), 0.464, 0.460, 0.465));
-        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 21), 0.461, 0.462, 0.464));
-        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 22), 0.464, 0.458, 0.465));
-        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 23), 0.460, 0.457, 0.462));
-        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 24), 0.457, 0.450, 0.457));
-        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 27), 0.457, 0.452, 0.457));
-        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 28), 0.455, 0.456, 0.469));
-        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 29), 0.462, 0.454, 0.463));
-        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 30), 0.455, 0.454, 0.459));
-        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 31), 0.459, 0.457, 0.460));
-        data.add(new StockOfDay(LocalDate.of(2019, Month.JUNE, 3), 0.460, 0.460, 0.461));
-        data.add(new StockOfDay(LocalDate.of(2019, Month.JUNE, 4), 0.432, 0.420, 0.430));
-        data.add(new StockOfDay(LocalDate.of(2019, Month.JUNE, 5), 0.425, 0.420, 0.425));
-        data.add(new StockOfDay(LocalDate.of(2019, Month.JUNE, 6), 0.410, 0.400, 0.411));
-        return new Stock("SAB1L", data);
+        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 13), 1.473, 1.000, 2.473));
+        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 14), 1.469, 1.000, 2.469));
+        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 15), 1.460, 1.000, 2.466));
+        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 16), 1.464, 1.000, 2.465));
+        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 17), 1.464, 1.100, 2.466));
+        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 20), 1.464, 1.200, 2.465));
+        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 21), 1.461, 1.100, 2.464));
+        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 22), 1.464, 1.000, 2.465));
+        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 23), 1.460, 1.000, 2.462));
+        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 24), 1.457, 1.000, 2.457));
+        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 27), 1.457, 1.000, 2.457));
+        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 28), 1.455, 1.100, 2.469));
+        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 29), 1.462, 1.100, 2.463));
+        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 30), 1.455, 1.100, 2.459));
+        data.add(new StockOfDay(LocalDate.of(2019, Month.MAY, 31), 1.459, 1.000, 2.460));
+        data.add(new StockOfDay(LocalDate.of(2019, Month.JUNE, 3), 1.460, 1.000, 2.461));
+        data.add(new StockOfDay(LocalDate.of(2019, Month.JUNE, 4), 1.432, 1.000, 2.430));
+        data.add(new StockOfDay(LocalDate.of(2019, Month.JUNE, 5), 1.425, 1.000, 2.425));
+        data.add(new StockOfDay(LocalDate.of(2019, Month.JUNE, 6), 1.410, 1.000, 2.411));
+        return new Stock("SAB-temp", data);
     }
 
     

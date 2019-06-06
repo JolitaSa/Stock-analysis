@@ -5,10 +5,8 @@
  */
 package com.stockproject.prognosis;
 
-import com.stockproject.data.DataLoader;
-import com.stockproject.data.TempDataLoader;
-import java.util.ArrayList;
-import java.util.List;
+import com.stockproject.model.FastOcsCalcResult;
+import com.stockproject.model.Stock;
 
 /**
  *
@@ -16,22 +14,25 @@ import java.util.List;
  */
 public class StockOcsPrint {
 
-    public void printFastOcs() {
 
-        DataLoader loader = new TempDataLoader();
-        System.out.println("Values of fast ocsillator K for " + loader.loadData().getName() + " stock:");
+    public void printFastOcs(Stock stock) {
 
         Ocsillators fastOcsK = new Ocsillators();
-        List<Double> fastOcsKprint = new ArrayList<>();
-        int size = loader.loadData().getData().size();
-        System.out.println(fastOcsK.calcFastOcs(loader.loadData(), 1));
-        for (int i = 0; i < size; i++) {
-        fastOcsKprint.add(fastOcsK.calcFastOcs(loader.loadData(), i));
-        System.out.println(fastOcsKprint.get(i));
-        }
-    }
-    
-    public void printSlowOcs() {
+        System.out.println(fastOcsK.fastOcs(stock).getFourDaysBeforeK());
+        System.out.println(fastOcsK.fastOcs(stock).getThreeDaysBeforeK());
+        System.out.println(fastOcsK.fastOcs(stock).getTwoDaysBeforeK());
+        System.out.println(fastOcsK.fastOcs(stock).getOneDayBeforeK());
+        System.out.println(fastOcsK.fastOcs(stock).getLastDayK());
 
-}
+    }
+
+    public void printSlowOcs(FastOcsCalcResult fastOcs) {
+
+        Ocsillators slowOcsK = new Ocsillators();
+        System.out.println(slowOcsK.slowOcs(fastOcs).getResultD3());
+        System.out.println(slowOcsK.slowOcs(fastOcs).getResultD2());
+        System.out.println(slowOcsK.slowOcs(fastOcs).getResultD1());
+
+
+    }
 }
