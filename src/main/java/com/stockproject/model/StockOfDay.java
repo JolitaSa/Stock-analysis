@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.js.project.model;
+package com.stockproject.model;
 
 import java.time.LocalDate;
 
@@ -16,7 +16,7 @@ public class StockOfDay {
     private Double pLast;
     private Double pMin;
     private Double pMax;
-    private LocalDate date = LocalDate.now(); //mow or end of the day?
+    private LocalDate date = LocalDate.now(); // end of the day?
 
     public StockOfDay(LocalDate date, Double pLast, Double pMin, Double pMax) {
         this.date = date;

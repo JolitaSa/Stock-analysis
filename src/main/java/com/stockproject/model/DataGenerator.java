@@ -3,21 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.js.project.data;
+package com.stockproject.model;
 
-import com.js.project.model.Stock;
-import com.js.project.model.StockOfDay;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
  * @author Jolita
  */
-public interface DataLoader {
+public interface DataGenerator {
 
-    Stock loadData();
+    public LocalDate getDate();
 
-   
+    public Double getpLast();
+
+    public Double getpMin();
+
+    public Double getpMax();
+
+    public String getName();
+
 }

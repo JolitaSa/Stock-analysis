@@ -3,10 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.js.project.model;
+package com.stockproject.model;
 
-import com.js.project.model.StockOfDay;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +18,15 @@ public class Stock {
     private List<StockOfDay> data = new ArrayList<>();
 
     public Stock(String name, List<StockOfDay> data) {
+        this.name = name;
         this.data = data;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Stock() {
     }
 
     public String getName() {
