@@ -43,7 +43,7 @@ public class Ocsillators implements OcsillatorsI {
 
         for (int i = (data.size() - dayBefore - 1); i >= 0; --i) {
             result.add(f.apply(data.get(i)));
-            if (result.size() <= 5) {
+            if (result.size() >= 5) {
                 break;
             }
         }

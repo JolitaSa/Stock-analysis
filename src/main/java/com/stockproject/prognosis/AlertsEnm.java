@@ -11,5 +11,5 @@ package com.stockproject.prognosis;
  */
 public enum AlertsEnm {
     
-    BUY, SELL, LOW_PERIOD, HIGH_PERIOD, NO_SIGNAL
+    BUY, SELL, LOW_PERIOD, HIGH_PERIOD, MIDDLE_PERIOD
 }

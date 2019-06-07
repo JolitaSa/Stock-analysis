@@ -30,7 +30,7 @@ public class PrognosisAlerts {
         } else if ((slowOcs.getResultD1() > periodHigh) && (fastOcs.getLastDayK() > periodHigh)) {
             return AlertsEnm.HIGH_PERIOD;
         } else {
-            return AlertsEnm.NO_SIGNAL;
+            return AlertsEnm.MIDDLE_PERIOD;
         }
     }
 

@@ -5,19 +5,17 @@
  */
 package com.stockproject.data;
 
-import com.stockproject.model.Stock;
-
 /**
  *
  * @author Jolita
  */
-public class LoaderFactory {
+public class InstanceFactory {
 
-    public static Stock loadData(boolean isDataReal) {
+    public static DataLoaderI createInstance(boolean isDataReal) {
         if (isDataReal) {
-            return new DataLoader().loadData();
+            return new DataLoader();
         } else {
-            return new TempDataLoader().loadData();
+            return new TempDataLoader();
         }
 
     }
