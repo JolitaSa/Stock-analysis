@@ -17,6 +17,9 @@ public class PrognosisAlerts {
     private int periodLow = 20;
     private int periodHigh = 80;
 
+    public PrognosisAlerts() {
+    }
+
     public AlertsEnm prognosisAlert(FastOcsCalcResult fastOcs, SlowOcsCalcResult slowOcs) {
 
         if ((slowOcs.getResultD1() == (fastOcs.getLastDayK())) && (fastOcs.getOneDayBeforeK() < slowOcs.getResultD2()
@@ -33,4 +36,7 @@ public class PrognosisAlerts {
             return AlertsEnm.NO_SIGNAL;
         }
     }
+
+    
+    
 }

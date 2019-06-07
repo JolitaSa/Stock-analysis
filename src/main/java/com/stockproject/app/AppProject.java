@@ -9,6 +9,11 @@ import com.stockproject.model.Stock;
 import com.stockproject.prognosis.StockLastsPrint;
 import com.stockproject.prognosis.StockOcsPrint;
 import com.stockproject.data.LoaderFactory;
+import com.stockproject.model.FastOcsCalcResult;
+import com.stockproject.model.SlowOcsCalcResult;
+import com.stockproject.prognosis.AlertsEnm;
+import com.stockproject.prognosis.AlertsPrint;
+import com.stockproject.prognosis.PrognosisAlerts;
 
 
 /**
@@ -31,13 +36,12 @@ public class AppProject {
         StockOcsPrint fastOcsK = new StockOcsPrint();
         fastOcsK.printFastOcs(stock);
         
-//        FastOcsCalcResult fastOcs;
-//        SlowOcsCalcResult slowOcs;
+        
 //        StockOcsPrint slowOcsD = new StockOcsPrint();
 //        slowOcsD.printSlowOcs(fastOcs);
 //
 //        PrognosisAlerts pa = new PrognosisAlerts();
-//        pa.prognosisAlert(fastOcs, slowOcs);
+//        pa.prognosisAlert();
 //        AlertsPrint al = new AlertsPrint();
 //        al.alert(AlertsEnm.NO_SIGNAL);
 
