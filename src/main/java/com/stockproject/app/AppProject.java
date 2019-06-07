@@ -9,12 +9,8 @@ import com.stockproject.model.Stock;
 import com.stockproject.prognosis.StockLastsPrint;
 import com.stockproject.prognosis.StockOcsPrint;
 import com.stockproject.data.LoaderFactory;
-import com.stockproject.model.FastOcsCalcResult;
-import com.stockproject.model.SlowOcsCalcResult;
-import com.stockproject.prognosis.AlertsEnm;
-import com.stockproject.prognosis.AlertsPrint;
+import com.stockproject.prognosis.Ocsillators;
 import com.stockproject.prognosis.PrognosisAlerts;
-
 
 /**
  *
@@ -30,20 +26,19 @@ public class AppProject {
 
         StockLastsPrint lastPrices = new StockLastsPrint();
         lastPrices.printPricesL(stock);
-        System.out.println();
 
+        Ocsillators ocs = new Ocsillators();
         System.out.println("Fast ocsillator of last 5 days for stock " + stock.getName());
         StockOcsPrint fastOcsK = new StockOcsPrint();
-        fastOcsK.printFastOcs(stock);
-        
-        
-//        StockOcsPrint slowOcsD = new StockOcsPrint();
-//        slowOcsD.printSlowOcs(fastOcs);
-//
-//        PrognosisAlerts pa = new PrognosisAlerts();
-//        pa.prognosisAlert();
-//        AlertsPrint al = new AlertsPrint();
-//        al.alert(AlertsEnm.NO_SIGNAL);
+        fastOcsK.printFastOcs(ocs.fastOcs(stock));
+
+        System.out.println("Slow ocsillator of last 3 days for stock " + stock.getName());
+        StockOcsPrint slowOcsD = new StockOcsPrint();
+        slowOcsD.printSlowOcs(ocs.slowOcs(ocs.fastOcs(stock)));
+
+        System.out.println("Trade signals for stock " + stock.getName());
+        PrognosisAlerts pa = new PrognosisAlerts();
+        System.out.println(pa.prognosisAlert(ocs.fastOcs(stock), ocs.slowOcs(ocs.fastOcs(stock))).toString());
 
     }
 }

@@ -7,7 +7,6 @@ package com.stockproject.data;
 
 import com.stockproject.model.Stock;
 
-
 /**
  *
  * @author Jolita
@@ -15,7 +14,6 @@ import com.stockproject.model.Stock;
 public class LoaderFactory {
 
     public static Stock loadData(boolean isDataReal) {
-        System.out.println("Data loaded");
         if (isDataReal) {
             return new DataLoader().loadData();
         } else {

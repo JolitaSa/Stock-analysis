@@ -37,7 +37,7 @@ public class Ocsillators implements OcsillatorsI {
     public Double selectLastP(List<StockOfDay> data, int dayBefore) {
         List<Double> resultLast = new ArrayList<>();
         for (int i = (data.size() - dayBefore - 1); i >= 0; --i) {
-            resultLast.add(data.get(data.size()-dayBefore-1).getpLast());
+            resultLast.add(data.get(data.size() - dayBefore - 1).getpLast());
         }
         return resultLast.get(data.size() - dayBefore - 1);
     }
