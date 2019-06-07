@@ -35,11 +35,7 @@ public class Ocsillators implements OcsillatorsI {
     }
 
     public Double selectLastP(List<StockOfDay> data, int dayBefore) {
-        List<Double> resultLast = new ArrayList<>();
-        for (int i = (data.size() - dayBefore - 1); i >= 0; --i) {
-            resultLast.add(data.get(data.size() - dayBefore - 1).getpLast());
-        }
-        return resultLast.get(data.size() - dayBefore - 1);
+        return data.get(data.size() - dayBefore - 1).getpLast();
     }
 
     public Double calcExtremumFromLastFive(List<StockOfDay> data, int dayBefore, Function<StockOfDay, Double> f, Function<List<Double>, Double> extremumFuntion) {
